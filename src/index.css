@@ -10,6 +10,8 @@
   --main-text: #fff;
   --sub: #ddd;
   --warn: #d32f2f;
+  --ok: #2e7d32;
+  --select-bg: #e3edfc;
 
   font-family: 'Malgun Gothic', system-ui, sans-serif; /* 윈도우 기본 한글 글꼴 */
   font-size: 18px; /* 본문 18px 이상: 프로젝터로 보여 줄 수 있게 */
@@ -29,6 +31,8 @@
     --head-bg: #2a2c36;
     --sub: #3a3c47;
     --warn: #ff7b72;
+    --ok: #6fd07a;
+    --select-bg: #26324a;
   }
 }
 

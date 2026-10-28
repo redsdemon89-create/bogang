@@ -106,6 +106,39 @@
   color: var(--text);
 }
 
+/* 작은 버튼 (표 안의 삭제·고르기) */
+.btn-small {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: var(--warn);
+  color: #fff;
+}
+
+.btn-select {
+  background: var(--main);
+  color: var(--main-text);
+}
+
+/* 등록 결과·오류 안내 문구 */
+.message {
+  align-self: center;
+  font-weight: bold;
+}
+
+.message.error {
+  color: var(--warn);
+}
+
+.message.ok {
+  color: var(--ok);
+}
+
 /* ===== 표 ===== */
 .table-box {
   overflow-x: auto; /* 화면이 좁으면 표만 옆으로 밀어서 보기 */
@@ -133,6 +166,12 @@ th {
   padding: 24px;
 }
 
+/* 보강 배정 탭에서 고른 결강 줄 */
+tr.selected td {
+  background: var(--select-bg);
+  font-weight: bold;
+}
+
 .not-assigned {
   color: var(--warn);
   font-weight: bold;
@@ -156,20 +195,76 @@ th {
   gap: 12px;
 }
 
+/* 지금 배정된 교사 + 배정 취소 버튼 */
+.current-sub {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 16px;
+}
+
+.current-sub .btn-sub {
+  padding: 8px 20px;
+}
+
 .candidate {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* 이름 아래에 교과·시수 */
+  align-items: flex-start;
+  gap: 4px;
   padding: 14px 16px;
   border: 2px solid var(--border);
   border-radius: 8px;
   background: var(--card);
   color: var(--text);
+  text-align: left;
   cursor: pointer;
 }
 
-.candidate-subject {
+.candidate:hover {
+  border-color: var(--main);
+}
+
+/* 지금 배정된 교사 카드 */
+.candidate.assigned {
+  border-color: var(--main);
+  background: var(--select-bg);
+}
+
+.candidate-name {
+  font-weight: bold;
+}
+
+.candidate-info {
   color: var(--muted);
+}
+
+/* "같은 교과" 표시 */
+.badge {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--main);
+  color: var(--main-text);
+  font-size: 16px;
+}
+
+/* ===== 시수 통계 ===== */
+.month-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.month-picker select {
+  padding: 8px 12px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--text);
 }
 
 /* ===== 좁은 화면(휴대폰) ===== */

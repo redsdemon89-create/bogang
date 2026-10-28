@@ -8,6 +8,12 @@ export function formatDate(dateText) {
   return `${d.getMonth() + 1}/${d.getDate()}(${DAY_NAMES[d.getDay()]})`
 }
 
+// "2026-11" → "2026년 11월"
+export function formatMonth(month) {
+  const [year, mon] = month.split('-')
+  return `${year}년 ${Number(mon)}월`
+}
+
 // 교사 id("t05")로 이름을 찾습니다. 없으면 빈 글자
 export function teacherName(teachers, id) {
   const teacher = teachers.find((t) => t.id === id)

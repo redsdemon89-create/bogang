@@ -1,12 +1,30 @@
-// 교사별 시수: 이번 달 교사별 보강 시수와 합계를 표로 보여 줌
+// 교사별 시수: 고른 달의 교사별 보강 시수를 많은 순으로 표에 보여 줌
 
-function StatsTable({ stats, month }) {
+import { useState } from 'react'
+import { listMonths, monthlyStats } from '../logic/stats.js'
+import { formatMonth } from '../logic/format.js'
+
+function StatsTable({ teachers, absences, defaultMonth }) {
+  // 지금 고른 달 (화면 안에서만 쓰는 값)
+  const [month, setMonth] = useState(defaultMonth)
+
+  const months = listMonths(absences, defaultMonth)
+  const stats = monthlyStats(teachers, absences, month)
   // 모든 교사의 시수를 더한 합계
   const total = stats.reduce((sum, row) => sum + row.count, 0)
 
   return (
     <section className="card">
-      <h2>{month.replace('-', '년 ')}월 교사별 보강 시수</h2>
+      <h2>교사별 보강 시수</h2>
+      <label className="month-picker">
+        월 선택
+        <select value={month} onChange={(event) => setMonth(event.target.value)}>
+          {months.map((m) => (
+            <option key={m} value={m}>{formatMonth(m)}</option>
+          ))}
+        </select>
+      </label>
+
       <div className="table-box">
         <table>
           <thead>
