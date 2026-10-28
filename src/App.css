@@ -1,0 +1,198 @@
+/* ===== 화면 틀: 제목 줄, 탭, 내용 ===== */
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+}
+
+.title-bar h1 {
+  font-size: 32px;
+  margin: 0;
+  padding: 20px 0 16px;
+}
+
+/* 탭 3개를 가로로 나란히 */
+.tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 3px solid var(--main);
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1; /* 세 탭이 같은 너비 */
+  padding: 14px 8px;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  background: var(--sub);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--main);
+  color: var(--main-text);
+}
+
+/* ===== 흰 바탕 카드 ===== */
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+/* ===== 입력 칸 배치 ===== */
+/* 넓은 화면: 칸들을 바둑판처럼 여러 개씩 한 줄에 */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px 20px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column; /* 이름표 아래에 입력 칸 */
+  gap: 6px;
+  font-weight: bold;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 10px 12px;
+  border: 1px solid #999;
+  border-radius: 6px;
+  font-weight: normal;
+  background: var(--card);
+  color: var(--text);
+}
+
+.form-grid input[readonly] {
+  background: var(--head-bg); /* 자동으로 채워지는 칸은 회색 */
+}
+
+/* ===== 버튼 ===== */
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-main,
+.btn-sub {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-main {
+  background: var(--main);
+  color: var(--main-text);
+}
+
+.btn-sub {
+  background: var(--sub);
+  color: var(--text);
+}
+
+/* ===== 표 ===== */
+.table-box {
+  overflow-x: auto; /* 화면이 좁으면 표만 옆으로 밀어서 보기 */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--border);
+  padding: 10px 8px;
+  text-align: center;
+  white-space: nowrap; /* 칸 안의 글자가 두 줄로 쪼개지지 않게 */
+}
+
+th {
+  background: var(--head-bg);
+}
+
+.empty {
+  color: var(--muted);
+  padding: 24px;
+}
+
+.not-assigned {
+  color: var(--warn);
+  font-weight: bold;
+}
+
+/* ===== 보강 교사 추천 ===== */
+.picker-target {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.hint {
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+
+.candidate-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.candidate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.candidate-subject {
+  color: var(--muted);
+}
+
+/* ===== 좁은 화면(휴대폰) ===== */
+@media (max-width: 600px) {
+  .form-grid,
+  .candidate-list {
+    grid-template-columns: 1fr; /* 한 줄에 하나씩 */
+  }
+
+  .title-bar h1 {
+    font-size: 26px;
+  }
+
+  .tab {
+    font-size: 18px;
+    padding: 12px 4px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .buttons button {
+    flex: 1; /* 버튼을 넓게 눌러지기 쉽게 */
+  }
+}

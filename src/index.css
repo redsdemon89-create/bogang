@@ -1,0 +1,46 @@
+/* ===== 전체 기본 모양 (색, 글꼴, 글자 크기) ===== */
+:root {
+  --bg: #f4f6f8;
+  --card: #fff;
+  --text: #222;
+  --muted: #666;
+  --border: #ddd;
+  --head-bg: #eef2f7;
+  --main: #2f6fde;
+  --main-text: #fff;
+  --sub: #ddd;
+  --warn: #d32f2f;
+
+  font-family: 'Malgun Gothic', system-ui, sans-serif; /* 윈도우 기본 한글 글꼴 */
+  font-size: 18px; /* 본문 18px 이상: 프로젝터로 보여 줄 수 있게 */
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* 컴퓨터가 어두운 화면 모드일 때 색 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16171d;
+    --card: #1f2028;
+    --text: #f3f4f6;
+    --muted: #a0a4ad;
+    --border: #3a3c47;
+    --head-bg: #2a2c36;
+    --sub: #3a3c47;
+    --warn: #ff7b72;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+/* 입력 칸·버튼도 같은 글꼴과 크기를 쓰게 합니다 */
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
