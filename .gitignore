@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# 비밀 설정과 배포 결과물
+.env
+.env.*
+release/
