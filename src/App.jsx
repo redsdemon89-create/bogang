@@ -80,6 +80,7 @@ function App() {
     <div className="app">
       <header className="title-bar">
         <h1>보강 도우미</h1>
+        <span className="version-badge">시범 버전 v0.1</span>
       </header>
 
       <nav className="tabs">
