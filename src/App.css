@@ -40,16 +40,18 @@
   padding: 14px 8px;
   font-size: 20px;
   font-weight: bold;
-  border: none;
+  border: 2px solid var(--border);
+  border-bottom: none;
   border-radius: 8px 8px 0 0;
-  background: var(--sub);
-  color: var(--text);
+  background: var(--card);
+  color: var(--muted);
   cursor: pointer;
 }
 
 .tab.active {
-  background: var(--main);
-  color: var(--main-text);
+  background: var(--tab-active);
+  border-color: var(--main);
+  color: var(--text);
 }
 
 /* ===== 흰 바탕 카드 ===== */
@@ -58,7 +60,7 @@
   border-radius: 10px;
   padding: 24px;
   margin-bottom: 20px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px var(--shadow);
 }
 
 .card h2 {
@@ -84,7 +86,7 @@
 .form-grid input,
 .form-grid select {
   padding: 10px 12px;
-  border: 1px solid #999;
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   font-weight: normal;
   background: var(--card);
@@ -92,7 +94,7 @@
 }
 
 .form-grid input[readonly] {
-  background: var(--head-bg); /* 자동으로 채워지는 칸은 회색 */
+  background: var(--head-bg); /* 자동으로 채워지는 칸은 연분홍 */
 }
 
 /* ===== 버튼 ===== */
@@ -133,7 +135,7 @@
 
 .btn-delete {
   background: var(--warn);
-  color: #fff;
+  color: var(--warn-text);
 }
 
 .btn-select {
@@ -277,7 +279,7 @@ tr.selected td {
 
 .month-picker select {
   padding: 8px 12px;
-  border: 1px solid #999;
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   background: var(--card);
   color: var(--text);

@@ -1,17 +1,22 @@
 /* ===== 전체 기본 모양 (색, 글꼴, 글자 크기) ===== */
 :root {
-  --bg: #f4f6f8;
-  --card: #fff;
-  --text: #222;
-  --muted: #666;
-  --border: #ddd;
-  --head-bg: #eef2f7;
-  --main: #2f6fde;
-  --main-text: #fff;
-  --sub: #ddd;
-  --warn: #d32f2f;
-  --ok: #2e7d32;
-  --select-bg: #e3edfc;
+  /* 이 변수 값만 바꾸면 앱 전체 색이 바뀝니다 */
+  --bg: #fff7f9; /* 화면 전체 바탕 (아주 연한 분홍) */
+  --card: #fff; /* 카드·입력 칸·추천 교사 칸 바탕 (흰색) */
+  --text: #3a2530; /* 본문 글자 */
+  --muted: #7a5c68; /* 보조 글자 (안내 문구, 교과·시수, 빈 표 안내, 안 고른 탭) */
+  --border: #f3d3dc; /* 표 줄·추천 교사 칸·안 고른 탭 테두리 */
+  --input-border: #a8808f; /* 입력 칸·선택 상자 테두리 (흰 바탕에서 잘 보이게 조금 진하게) */
+  --head-bg: #fdeef3; /* 표 머리줄, 자동으로 채워지는 입력 칸 바탕 */
+  --main: #b83b63; /* 주 버튼·링크, 탭 아래 줄, '같은 교과' 표시 */
+  --main-text: #fff; /* 주 버튼 위 글자 (진분홍 위 흰 글자) */
+  --sub: #f3d3dc; /* 보조 버튼(취소 등) 바탕 */
+  --tab-active: #fde4ec; /* 선택된 탭 바탕 */
+  --select-bg: #fde4ec; /* 표에서 고른 줄, 배정된 교사 칸 바탕 */
+  --warn: #d32f2f; /* 삭제 버튼, 오류 문구, 미배정 표시 (바꾸지 않음) */
+  --warn-text: #fff; /* 삭제 버튼 위 글자 */
+  --ok: #2e7d32; /* 등록 성공 문구 (초록) */
+  --shadow: rgba(184, 59, 99, 0.12); /* 카드 그림자 (분홍빛) */
 
   font-family: 'Malgun Gothic', system-ui, sans-serif; /* 윈도우 기본 한글 글꼴 */
   font-size: 18px; /* 본문 18px 이상: 프로젝터로 보여 줄 수 있게 */
@@ -20,19 +25,22 @@
   background: var(--bg);
 }
 
-/* 컴퓨터가 어두운 화면 모드일 때 색 */
+/* 컴퓨터가 어두운 화면 모드일 때 색 (어두운 분홍 계열) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #16171d;
-    --card: #1f2028;
-    --text: #f3f4f6;
-    --muted: #a0a4ad;
-    --border: #3a3c47;
-    --head-bg: #2a2c36;
-    --sub: #3a3c47;
-    --warn: #ff7b72;
-    --ok: #6fd07a;
-    --select-bg: #26324a;
+    --bg: #1e1418; /* 화면 전체 바탕 */
+    --card: #2a1d23; /* 카드·입력 칸 바탕 */
+    --text: #f7e9ee; /* 본문 글자 */
+    --muted: #c4a5b1; /* 보조 글자 */
+    --border: #4a3540; /* 표 줄·칸 테두리 */
+    --input-border: #8a6a77; /* 입력 칸 테두리 */
+    --head-bg: #362630; /* 표 머리줄 */
+    --sub: #4a3540; /* 보조 버튼 바탕 */
+    --tab-active: #4a2a37; /* 선택된 탭 바탕 */
+    --warn: #ff7b72; /* 삭제·오류·미배정 */
+    --ok: #6fd07a; /* 성공 문구 */
+    --select-bg: #4a2a37; /* 고른 줄·배정된 교사 칸 */
+    --shadow: rgba(0, 0, 0, 0.4); /* 카드 그림자 */
   }
 }
 
